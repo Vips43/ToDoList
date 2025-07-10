@@ -21,17 +21,23 @@ main{
   background-color: black;
   width: 80%;
   padding: 5px;
-  h2{
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  > div{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   }
-  > input{
+  > div > input{
     padding: 5px;
     font-style: 1rem;
     background-color: aliceblue;
     color: black;
     text-align: center;
   }
-  > button{
+  > div > button{
     padding: 5px 10px;
     border-radius: 5px;
     background-color: green;
