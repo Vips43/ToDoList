@@ -54,7 +54,6 @@ main{
   padding: 5px;
 }
 .down .task{
-  border: 1px solid white;
   margin: 10px;
   column-gap: 10px;
 }
@@ -62,10 +61,13 @@ main{
   list-style-position: inside;
   padding: 5px;
   position: relative;
+  background-color: bisque;
+  color: black;
+  border-radius: 15px;
 }
 .down .task li .removeBtn{
     position: absolute;
-    right: 20px;
+    right: 5px;
     top: 2px;
     padding: 5px 10px;
     background-color: rgb(170, 33, 33);    
