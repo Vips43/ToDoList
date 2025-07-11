@@ -3,21 +3,34 @@ let ol = document.querySelector('.task')
 
 
 function addTask(){
-    work();
+    if(taskValue.value !== ''){
+        work();
+        taskValue.value = ''
+    }
+    else{
+        return
+    }
 }
 
 function work(){
     let li = document.createElement('li')
     let span = document.createElement('span')
-    let button = document.createElement('button')
-
     
     ol.appendChild(li)
     li.appendChild(span)
-    li.appendChild(button)
-    
     span.innerText = taskValue.value
+    
+    deleteBtn(li);
+}
+function deleteBtn(li) {
+    let button = document.createElement('button')
+    li.appendChild(button)
     button.innerText = 'X';
-
-
+    
+    li.addEventListener('click',()=>{
+        li.classList.toggle('checked')
+    })
+    button.addEventListener('click', ()=>{
+        button.parentElement.remove()
+    })
 }

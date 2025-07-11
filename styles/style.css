@@ -47,6 +47,9 @@ main{
     font-size: 1.2rem;
   }
 }
+.upper p{
+  opacity: 0;
+}
 .down{
   background-color: black;
   margin-top: 1rem;
@@ -59,17 +62,23 @@ main{
 }
 .down .task li{
   list-style-position: inside;
-  padding: 5px;
+  padding: 10px 5px;
   position: relative;
   background-color: bisque;
   color: black;
-  border-radius: 15px;
+  border-radius: 10px;
+  margin: 5px;
 }
-.down .task li .removeBtn{
+.down .task li > button{
     position: absolute;
+    height: 100%;
     right: 5px;
-    top: 2px;
-    padding: 5px 10px;
+    top: 0px;
+    font-weight: 900;
+    padding: 5px 15px;
     background-color: rgb(170, 33, 33);    
-    border-radius: 10px;
-   }
+    border-radius: 20px;
+}
+.checked{
+  color: limegreen;
+}   
