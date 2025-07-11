@@ -6,10 +6,12 @@ function addTask(){
     if(taskValue.value !== ''){
         work();
         taskValue.value = ''
+        saveData();
     }
     else{
         return
     }
+    saveData();
 }
 
 function work(){
@@ -19,18 +21,30 @@ function work(){
     ol.appendChild(li)
     li.appendChild(span)
     span.innerText = taskValue.value
+    saveData();
     
-    deleteBtn(li);
+    deleteBtn(li, span);
+    saveData();
 }
-function deleteBtn(li) {
+function deleteBtn(li, span) {
     let button = document.createElement('button')
     li.appendChild(button)
     button.innerText = 'X';
     
-    li.addEventListener('click',()=>{
-        li.classList.toggle('checked')
+    span.addEventListener('click',()=>{
+        span.classList.toggle('checked')
     })
     button.addEventListener('click', ()=>{
         button.parentElement.remove()
+        saveData();
     })
+    
 }
+
+function saveData() {
+    localStorage.setItem('data', ol.innerHTML)
+}
+function showData() {
+    ol.innerHTML = localStorage.getItem('data')
+}
+showData();

@@ -80,5 +80,5 @@ main{
     border-radius: 20px;
 }
 .checked{
-  color: limegreen;
+  text-decoration: line-through;
 }   
