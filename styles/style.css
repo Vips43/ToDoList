@@ -92,3 +92,10 @@ main{
 .checked{
   text-decoration: line-through;
 }   
+
+input[type="checkbox"]{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+}
