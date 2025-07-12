@@ -69,15 +69,25 @@ main{
   border-radius: 10px;
   margin: 5px;
 }
+.down .task .checked::after{
+  content: "✔️";
+  position: absolute;
+  right: 100px;
+}
 .down .task li > button{
     position: absolute;
     height: 100%;
-    right: 5px;
+    width: 80px;
+    right: 0px;
     top: 0px;
     font-weight: 900;
     padding: 5px 15px;
     background-color: rgb(170, 33, 33);    
-    border-radius: 20px;
+    border-radius: 10px;
+}
+.clear{
+  background: white;
+  padding: 10px;
 }
 .checked{
   text-decoration: line-through;

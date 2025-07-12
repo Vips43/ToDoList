@@ -11,7 +11,6 @@ function addTask(){
     else{
         return
     }
-    saveData();
 }
 
 function work(){
@@ -21,7 +20,6 @@ function work(){
     ol.appendChild(li)
     li.appendChild(span)
     span.innerText = taskValue.value
-    saveData();
     
     deleteBtn(li, span);
     saveData();
@@ -30,15 +28,15 @@ function deleteBtn(li, span) {
     let button = document.createElement('button')
     li.appendChild(button)
     button.innerText = 'X';
-    
+    saveData();
     span.addEventListener('click',()=>{
-        span.classList.toggle('checked')
+        span.classList.add('checked')
+        saveData();
     })
     button.addEventListener('click', ()=>{
         button.parentElement.remove()
         saveData();
     })
-    
 }
 
 function saveData() {
@@ -48,3 +46,7 @@ function showData() {
     ol.innerHTML = localStorage.getItem('data')
 }
 showData();
+
+function clea() {
+    localStorage.clear()
+}
