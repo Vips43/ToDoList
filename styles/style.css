@@ -39,6 +39,9 @@ main{
     color: black;
     text-align: center;
   }
+  input:placeholder-shown{
+    text-align: left;
+  }
   > div > button{
     padding: 0px 10px;
     border-radius: 5px;

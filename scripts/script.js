@@ -53,28 +53,24 @@
 //     localStorage.clear()
 // }
 
-let inputTask = document.getElementById('input');
-let taskContainer = document.querySelector('.task')
+let input = document.querySelector('#input')
+let ol = document.querySelector('.task')
 
-let tasks = [];
+let allTodos = [];
 
 function addBtn() {
-    addTodo();
-
+    if(input.value == ''){
+        return
+    }else{
+        let todoText = input.value.trim()
+        allTodos.push(todoText)
+        createTodoItem(todoText);
+        ol.innerHTML = allTodos
+        input.value = '';
+    }
 }
-
-function addTodo() {
-    const task = inputTask.value.trim();
-    inputTask.value = '';
-    tasks.push(task);
-    createToDo(tasks);
-}
-function createToDo(task) {
-    const li = document.createElement('li');
-    li.innerText = task
-    console.log(li);
-    taskContainer.append(li)
-    // li.innerHTML = `<span>${task}</span>
-    //     <button class="deletBtn">X</button>
-    //     `;
+function createTodoItem(todo) {
+    const todoLI = document.createElement("li");
+    todoLI.innerText = todo;
+    ol.append(todoLI)
 }
