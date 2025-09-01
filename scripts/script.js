@@ -4,7 +4,7 @@ let ol = document.querySelector('.task'),
   warn = document.getElementById('warn')
 
 
-let todoSpan = null
+let todoSpan = null;
 
 function addBtn() {
   if (addEditBtn.innerText == 'Edit') {
