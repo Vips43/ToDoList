@@ -53,7 +53,7 @@ function addTask(taskObj) {
   //delete tasks
   delbtn.addEventListener('click', () => {
     li.remove()
-    showWarn("Task Deleted", "black")
+    showWarn("Task Deleted successfully!", "black")
     saveTasks()
   })
 
