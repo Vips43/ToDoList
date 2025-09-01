@@ -85,21 +85,7 @@ main {
   margin: .2rem;
   padding: .5rem;
   border-radius: 10px;
-  gap: 5px;
-}
-.task > li > span{
-   font-size: 1rem;
-   margin-right: auto;
-  cursor: pointer;
-}
-.task > li > span.comp{
-  text-decoration: line-through;
-  color: grey;
-}
-.down .task .checked::after {
-  content: "✔️";
-  position: absolute;
-  right: 100px;
+  margin: 5px;
 }
 .deletBtn {
   height: 100%;

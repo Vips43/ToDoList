@@ -2,7 +2,11 @@ let input = document.querySelector('#input')
 let ol = document.querySelector('.task'),
   addEditBtn = document.querySelector('.addBtn'),
   warn = document.getElementById('warn')
+let ol = document.querySelector('.task'),
+  addEditBtn = document.querySelector('.addBtn'),
+  warn = document.getElementById('warn')
 
+let todoSpan = null
 let todoSpan = null
 
 function addBtn() {
