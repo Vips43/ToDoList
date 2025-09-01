@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <link rel="stylesheet" href="styles/style.css">
-  <title>Document</title>
+  <title>Todo List</title>
 </head>
 <body>
   <main>
-    <div class="upper">
+    <div class="todo-container">
       <h2>ToDo List</h2>
-      <div>
+      <div class="input-field">
         <input type="text" id="input" placeholder="Add tasks here">
-        <button class="addBtn" onclick="addBtn()">➕</button>
+        <button class="addBtn" onclick="addBtn()">Add</button>
       </div>
-      <p>Task has been added</p>
+      <p id="warn"></p>
     </div>
-    <div class="down">
+    <div class="tasks">
       <ol class="task">
-        <li><span>kdoekeooekf</span>
-        <button class="deletBtn">X</button>
-        </li>
+        <!-- <li><span>kdoekeooekf</span>
+          <button class="editBtn">Edit</button>
+          <button class="delBtn">X</button>
+        </li> -->
       </ol>
     </div>
     <!-- <button class="clear" onclick="clea()">clear</button> -->
