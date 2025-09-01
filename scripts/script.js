@@ -63,7 +63,6 @@ function addTask(taskObj) {
     input.focus()
     addEditBtn.innerText = 'Edit'
     todoSpan = span
-    console.log(todoSpan)
     saveTasks()
   })
 

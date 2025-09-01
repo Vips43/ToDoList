@@ -98,23 +98,26 @@ main {
 }
 .deletBtn {
   height: 100%;
-  width: 50px;
-  font-weight: 900;
-  padding: 5px 15px;
+  width: 40px;
+  text-align: center;
+  padding: 5px 10px;
   background-color: rgb(170, 33, 33);
   box-shadow: 0 0 10px grey;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: 500;
 }
 .editBtn {
-  width: 50px;
+  width: 40px;
   border-radius: 10px;
   background-color: rgb(44, 121, 44);
   box-shadow: 0 0 5px grey;
-  height: 27px;
-  font-size: 1rem;
+  padding: 5px 10px;
+  font-weight: normal;
 }
 button{
+  display: grid;
+  place-items: center;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
