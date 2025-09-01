@@ -92,6 +92,10 @@ main {
    margin-right: auto;
   cursor: pointer;
 }
+.task > li > span.comp{
+  text-decoration: line-through;
+  color: grey;
+}
 .down .task .checked::after {
   content: "✔️";
   position: absolute;

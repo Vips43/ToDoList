@@ -22,21 +22,25 @@ function addBtn() {
       showWarn("Please Write something", "red")
       return
     } else {
-      addTask(inputValue)
+      addTask({text: inputValue, completed: false})
       input.value = ''
-      showWarn("Task added", "green")
       saveTasks()
+      showWarn("Task added", "green") //show warning
     }
   }
 }
 
-function addTask(task) {
+function addTask(taskObj) {
   let li = document.createElement('li'),
     span = document.createElement('span'),
     editbtn = document.createElement('button'),
     delbtn = document.createElement('button')
 
-  span.innerText = task
+  span.innerText = taskObj.text
+  if(taskObj.completed){
+    span.classList.add('comp')
+  }
+  
   editbtn.innerText = 'Edit'
   delbtn.innerText = 'Del'
   editbtn.classList = 'editBtn'
@@ -63,6 +67,12 @@ function addTask(task) {
   })
 
 }
+ol.addEventListener('click',(e)=>{
+  if(e.target.tagName == 'SPAN'){
+    e.target.classList.toggle('comp')
+    saveTasks()
+  }
+})
 function showWarn(warning,color) {
   warn.classList.add('show')
   warn.style.color = color
@@ -74,15 +84,19 @@ function showWarn(warning,color) {
 
 function saveTasks() {
   const tasks = []
-  document.querySelectorAll('.task li span').forEach(span=>{
-    tasks.push(span.innerText)
+  document.querySelectorAll('.task li').forEach(li=>{
+    let span= li.querySelector("span")
+    tasks.push({
+      text: span.innerText,
+      completed: span.classList.contains('comp')
+    })
   })
   localStorage.setItem('tasks',JSON.stringify(tasks))
 }
 
 function loadTasks() {
   const storedTasks = JSON.parse(localStorage.getItem('tasks')) || []
-  storedTasks.forEach(task => addTask(task))
+  storedTasks.forEach(taskObj => addTask(taskObj))
 }
 
 window.addEventListener('DOMContentLoaded', loadTasks)
