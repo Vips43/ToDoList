@@ -6,6 +6,7 @@
   border: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
   width: 100%;
   display: flex;
@@ -13,6 +14,7 @@ body {
   align-items: center;
   background-color: #9c947f;
 }
+
 main {
   margin-top: 50px;
   display: flex;
@@ -21,6 +23,7 @@ main {
   width: 400px;
   background-color: #FFF0CE;
 }
+
 .todo-container {
   flex: 1 0;
   padding: 10px 0;
@@ -32,15 +35,18 @@ main {
   flex-direction: column;
   gap: 10px;
 }
-#warn{
+
+#warn {
   padding: .3rem;
   opacity: 0;
   color: #c2a009;
   transition: all .3s ease-in-out;
 }
-#warn.show{
+
+#warn.show {
   opacity: 1;
 }
+
 .input-field {
   width: 70%;
   height: 35px;
@@ -51,13 +57,15 @@ main {
   border-radius: 20px;
   overflow: hidden;
 }
-.input-field > input {
+
+.input-field>input {
   padding: 0 0 0 1rem;
   background-color: #e6cfa94d;
   border: px solid grey;
   flex-grow: 1;
   color: black;
 }
+
 .addBtn {
   padding: 0px 5px 5px 5px;
   width: 40px;
@@ -66,17 +74,25 @@ main {
   color: black;
   font-weight: 700;
 }
+
 .tasks {
   background-color: #f0e2c3;
   color: white;
   padding: 5px;
+  height: 200px;
+  overflow-y: auto;
 }
+.tasks::-webkit-scrollbar{
+  display: none;
+}
+
 .tasks .task {
   margin: .5rem 0 .5rem 0rem;
   column-gap: 10px;
   color: black;
 }
-.task > li {
+
+.task>li {
   /* list-style-position: inside; */
   list-style-type: lower-roman;
   display: flex;
@@ -86,16 +102,20 @@ main {
   padding: .5rem;
   border-radius: 10px;
   gap: 5px;
+  transition: all .5s ease-in-out;
 }
-.task > li > span{
-   font-size: 1rem;
-   margin-right: auto;
+
+.task>li>span {
+  font-size: 1rem;
+  margin-right: auto;
   cursor: pointer;
 }
-.task > li > span.comp{
+
+.task>li>span.comp {
   text-decoration: line-through;
   color: grey;
 }
+
 .deletBtn {
   height: 100%;
   width: 40px;
@@ -107,6 +127,7 @@ main {
   cursor: pointer;
   font-weight: 500;
 }
+
 .editBtn {
   width: 40px;
   border-radius: 10px;
@@ -115,12 +136,20 @@ main {
   padding: 5px 10px;
   font-weight: normal;
 }
-button{
+
+button {
   display: grid;
   place-items: center;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
-.editBtn:hover,.deletBtn:hover{
+
+.editBtn:hover,
+.deletBtn:hover {
   transform: scale(.9);
+}
+
+.vanish {
+  opacity: 0;
+  transform: scale(0);
 }
